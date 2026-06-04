@@ -3,13 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
 <title>Ata-Ul Munim | DevOps &amp; Cloud Engineer</title>
-<meta name="description" content="DevOps &amp; Cloud Engineer with 7+ years building reliable, scalable, cost-efficient infrastructure on AWS and Azure. Kubernetes, Terraform, CI/CD. AWS &amp; Azure certified.">
+<meta name="description" content="DevOps &amp; Cloud Engineer with 7+ years building reliable, scalable, cost-efficient infrastructure on AWS and Azure. Kubernetes, Terraform, CI/CD. AWS &amp; Azure certified. Based in Karachi, Pakistan, available for remote contract and freelance work.">
 <meta name="author" content="Ata-Ul Munim">
+<meta name="theme-color" content="#0a0e16">
+<link rel="canonical" href="https://aseelshaikh.github.io/">
 <meta property="og:title" content="Ata-Ul Munim | DevOps &amp; Cloud Engineer">
-<meta property="og:description" content="AWS &amp; Azure · Kubernetes · Terraform · CI/CD. 7+ years building production infrastructure that deploys reliably, scales automatically, and costs what it should.">
+<meta property="og:description" content="AWS &amp; Azure · Kubernetes · Terraform · CI/CD. 7+ years building production infrastructure that deploys reliably, scales automatically, and costs what it should. Based in Karachi, available for remote contract work.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://aseelshaikh.github.io/">
+<meta property="og:site_name" content="Ata-Ul Munim">
+<meta property="og:image" content="https://aseelshaikh.github.io/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ata-Ul Munim, DevOps and Cloud Engineer. AWS and Azure, Kubernetes, Terraform, CI/CD.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ata-Ul Munim | DevOps &amp; Cloud Engineer">
+<meta name="twitter:description" content="AWS &amp; Azure · Kubernetes · Terraform · CI/CD. 7+ years building production infrastructure. Based in Karachi, available for remote contract work.">
+<meta name="twitter:image" content="https://aseelshaikh.github.io/og-card.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0e16'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' text-anchor='middle' fill='%2338bdf8'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -17,7 +31,7 @@
   :root{
     --bg:#0a0e16; --bg-soft:#0d1320; --surface:#121a28; --surface-2:#16202f;
     --border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.14);
-    --text:#e8eef7; --muted:#9aa9bd; --faint:#6b7a90;
+    --text:#e8eef7; --muted:#9aa9bd; --faint:#8a99af;
     --accent:#38bdf8; --accent-2:#2dd4bf; --accent-3:#818cf8;
     --aws:#ff9d2b; --azure:#3b9be3;
     --radius:16px; --maxw:1080px;
@@ -46,8 +60,14 @@
     mask-image:radial-gradient(circle at 50% 0%, #000 0%, transparent 70%);
   }
   a{color:inherit; text-decoration:none}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:8px}
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
   .mono{font-family:'JetBrains Mono',monospace}
+
+  /* skip link */
+  .skip{position:absolute; left:-999px; top:0; z-index:200; background:var(--accent); color:#06121a;
+    padding:10px 16px; border-radius:0 0 10px 0; font-weight:700}
+  .skip:focus{left:0}
 
   /* nav */
   header.nav{
@@ -55,19 +75,27 @@
     backdrop-filter:blur(12px); background:rgba(10,14,22,.72);
     border-bottom:1px solid var(--border);
   }
-  .nav-in{display:flex; align-items:center; justify-content:space-between; height:64px}
-  .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:64px; gap:12px}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px; flex:none}
   .brand .dot{width:30px; height:30px; border-radius:8px; display:grid; place-items:center;
     background:linear-gradient(135deg,var(--accent),var(--accent-3)); color:#08111c; font-weight:800;
-    font-family:'JetBrains Mono',monospace}
-  .nav-links{display:flex; gap:28px; align-items:center}
-  .nav-links a{color:var(--muted); font-size:14px; font-weight:500; transition:color .18s}
+    font-family:'JetBrains Mono',monospace; font-size:16px}
+  .nav-links{display:flex; gap:26px; align-items:center}
+  .nav-links a{color:var(--muted); font-size:14px; font-weight:500; transition:color .18s; white-space:nowrap}
   .nav-links a:hover{color:var(--text)}
-  .nav-cta{padding:9px 16px; border-radius:10px; background:var(--surface-2);
+  .nav-cta{padding:10px 16px; border-radius:10px; background:var(--surface-2);
     border:1px solid var(--border-strong); color:var(--text)!important; font-weight:600; cursor:pointer;
     transition:transform .18s, border-color .18s, background .18s}
   .nav-cta:hover{transform:translateY(-1px); border-color:var(--accent); background:#19222f}
-  @media(max-width:680px){.nav-links a:not(.nav-cta){display:none}}
+  @media(max-width:680px){
+    .nav-in{gap:8px}
+    .brand{font-size:0}
+    .brand .dot{font-size:14px}
+    .nav-links{gap:14px; flex:1; justify-content:flex-end; overflow-x:auto; scrollbar-width:none}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a{font-size:13px}
+    .nav-cta{flex:none}
+  }
 
   /* hero */
   .hero{padding:84px 0 64px; position:relative}
@@ -82,11 +110,13 @@
   .avatar-ring img{width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:center 30%;
     display:block; border:4px solid var(--bg)}
   @media(max-width:880px){
-    .hero{padding:60px 0 50px}
-    .hero-grid{grid-template-columns:1fr; gap:30px; justify-items:center; text-align:center}
-    .avatar-ring{order:-1; width:200px; height:200px}
-    .hero-copy .cta-row,.hero-copy .hero-meta{justify-content:center}
-    .hero-copy .lead{margin-left:auto; margin-right:auto}
+    .hero{padding:26px 0 44px}
+    .hero-grid{grid-template-columns:1fr; gap:18px; justify-items:center; text-align:center}
+    .avatar-ring{order:-1; width:112px; height:112px; margin-top:6px}
+    .hero-copy h1.name{margin-top:14px}
+    .hero-copy .lead{font-size:15px; margin-top:14px; margin-left:auto; margin-right:auto}
+    .hero-copy .cta-row{margin-top:20px; justify-content:center}
+    .hero-copy .hero-meta{margin-top:18px; justify-content:center}
   }
   .kicker{display:inline-flex; align-items:center; gap:9px; font-size:13px; font-weight:600;
     color:var(--accent); background:rgba(56,189,248,.08); border:1px solid rgba(56,189,248,.22);
@@ -94,9 +124,9 @@
   .kicker .pulse{width:8px; height:8px; border-radius:50%; background:var(--accent-2);
     box-shadow:0 0 0 0 rgba(45,212,191,.6); animation:pulse 2.4s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,212,191,.55)}70%{box-shadow:0 0 0 9px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
-  h1.name{font-size:clamp(40px,7vw,68px); line-height:1.04; margin:22px 0 0; font-weight:800;
+  h1.name{font-size:clamp(38px,7vw,68px); line-height:1.04; margin:22px 0 0; font-weight:800;
     letter-spacing:-1.5px}
-  h1.name .grad{background:linear-gradient(110deg,var(--accent) 10%,var(--accent-2) 55%,var(--accent-3) 100%);
+  h1.name .grad{color:var(--accent); background:linear-gradient(110deg,var(--accent) 10%,var(--accent-2) 55%,var(--accent-3) 100%);
     -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
   .role{margin-top:10px; font-size:clamp(17px,2.4vw,22px); font-weight:600; color:var(--text)}
   .role .sep{color:var(--faint); margin:0 10px}
@@ -105,21 +135,22 @@
   .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px}
   .btn{display:inline-flex; align-items:center; gap:9px; padding:12px 18px; border-radius:12px;
     font-weight:600; font-size:14.5px; cursor:pointer; transition:transform .18s, box-shadow .18s, border-color .18s, background .18s;
-    border:1px solid var(--border-strong)}
+    border:1px solid var(--border-strong); min-height:44px}
   .btn svg{width:18px; height:18px}
   .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#06121a; border-color:transparent;
     box-shadow:0 10px 30px -10px rgba(56,189,248,.6)}
   .btn.primary:hover{transform:translateY(-2px); box-shadow:0 16px 38px -12px rgba(56,189,248,.7)}
   .btn.ghost{background:var(--surface); color:var(--text)}
   .btn.ghost:hover{transform:translateY(-2px); border-color:var(--accent); background:var(--surface-2)}
+  .btn.email{border-color:rgba(56,189,248,.45)}
   .hero-meta{display:flex; flex-wrap:wrap; gap:12px; margin-top:36px}
   .hero-meta .pill{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:13px;
-    background:var(--surface); border:1px solid var(--border-strong); font-size:15.5px; font-weight:600;
+    background:var(--surface); border:1px solid var(--border-strong); font-size:15px; font-weight:600;
     color:var(--text); transition:transform .18s, border-color .18s}
   .hero-meta .pill:hover{transform:translateY(-2px)}
   .hero-meta .pill svg{width:19px; height:19px}
   .hero-meta .pill .ic{color:var(--accent)}
-  .hero-meta .x2{font-weight:800; font-size:17px; letter-spacing:.3px}
+  .hero-meta .x2{font-weight:800; font-size:16px; letter-spacing:.3px}
   .hero-meta .pill.aws{border-color:rgba(255,157,43,.45); background:rgba(255,157,43,.10)}
   .hero-meta .pill.aws .ic,.hero-meta .pill.aws .x2{color:var(--aws)}
   .hero-meta .pill.aws:hover{border-color:var(--aws)}
@@ -138,7 +169,7 @@
   .stat{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
     padding:22px 20px; transition:transform .2s, border-color .2s}
   .stat:hover{transform:translateY(-3px); border-color:var(--border-strong)}
-  .stat .big{font-size:30px; font-weight:800; letter-spacing:-1px;
+  .stat .big{font-size:30px; font-weight:800; letter-spacing:-1px; color:var(--accent);
     background:linear-gradient(120deg,var(--accent),var(--accent-2)); -webkit-background-clip:text;
     background-clip:text; -webkit-text-fill-color:transparent}
   .stat .lbl{color:var(--muted); font-size:13.5px; margin-top:4px}
@@ -157,6 +188,17 @@
   .cert .badge svg{width:18px; height:18px; color:var(--accent)}
   .cert .ct{font-weight:700; font-size:15px; line-height:1.3}
   .cert .cs{color:var(--faint); font-size:12.5px; margin-top:1px}
+
+  /* services */
+  .svc-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+  @media(max-width:820px){.svc-grid{grid-template-columns:1fr}}
+  .svc{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:22px;
+    transition:transform .2s, border-color .2s}
+  .svc:hover{transform:translateY(-3px); border-color:var(--border-strong)}
+  .svc h3{margin:0 0 8px; font-size:16.5px; font-weight:700}
+  .svc p{color:var(--muted); font-size:14px; margin:0 0 14px}
+  .svc .tl{font-size:12px; font-weight:600; color:var(--accent); background:rgba(56,189,248,.08);
+    border:1px solid rgba(56,189,248,.22); padding:5px 11px; border-radius:7px; display:inline-block}
 
   /* stack */
   .stack-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
@@ -191,12 +233,12 @@
   .status.live .d{animation:pulse 2.4s infinite; box-shadow:0 0 0 0 rgba(52,211,153,.55)}
   .status.soon{color:#fbbf24; background:rgba(251,191,36,.12); border:1px solid rgba(251,191,36,.32)}
   .status.dev{color:var(--accent-3); background:rgba(129,140,248,.14); border:1px solid rgba(129,140,248,.34)}
-  .status.queue{color:var(--faint); background:rgba(255,255,255,.04); border:1px solid var(--border)}
+  .status.queue{color:#94a3b8; background:rgba(255,255,255,.04); border:1px solid var(--border)}
   .proj h3{margin:0; font-size:19px; font-weight:700; letter-spacing:-.3px}
   .proj p{color:var(--muted); font-size:14.5px; margin:10px 0 16px; flex:1}
   .proj .chips{margin-bottom:18px}
   .proj-link{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14px;
-    color:var(--accent); align-self:flex-start; transition:gap .2s, color .2s}
+    color:var(--accent); align-self:flex-start; transition:gap .2s, color .2s; min-height:44px; padding:6px 0}
   .proj-link svg{width:16px; height:16px; transition:transform .2s}
   .proj-link:hover{color:var(--accent-2)}
   .proj-link:hover svg{transform:translate(2px,-2px)}
@@ -212,39 +254,50 @@
   .os .os-ico svg{width:20px; height:20px; color:var(--accent)}
   .os h3{margin:0 0 6px; font-size:16.5px; font-weight:700}
   .os p{color:var(--muted); font-size:13.5px; margin:0 0 14px}
-  .os a.lnk{display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600; color:var(--accent)}
+  .os a.lnk{display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600; color:var(--accent);
+    min-height:44px; padding:4px 0}
   .os a.lnk svg{width:14px; height:14px}
   .os a.lnk:hover{color:var(--accent-2)}
 
   /* contact */
   .contact{background:linear-gradient(135deg,rgba(56,189,248,.08),rgba(129,140,248,.06));
     border:1px solid var(--border-strong); border-radius:24px; padding:48px 40px; text-align:center; margin-top:10px}
-  .contact h2{margin:0 0 12px}
+  .contact h2{margin:0 auto 12px; max-width:560px; text-wrap:balance}
   .contact p{color:var(--muted); max-width:520px; margin:0 auto 26px}
   .contact .cta-row{justify-content:center}
+  .contact .note{color:var(--muted); font-size:14px; max-width:520px; margin:22px auto 0}
+  .contact .copye{color:var(--faint); font-size:13.5px; margin:10px auto 0}
+  .contact .copye span{color:var(--muted); -webkit-user-select:all; user-select:all}
 
   footer{border-top:1px solid var(--border); padding:30px 0; margin-top:50px}
   .foot-in{display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between;
     color:var(--faint); font-size:13px}
-  .foot-links{display:flex; gap:18px}
-  .foot-links a{color:var(--faint); transition:color .18s}
+  .foot-links{display:flex; gap:22px}
+  .foot-links a{color:var(--faint); transition:color .18s; min-height:44px; display:inline-flex; align-items:center}
   .foot-links a:hover{color:var(--accent)}
 
-  .reveal{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease}
-  .reveal.in{opacity:1; transform:none}
+  .reveal{opacity:1; transform:none}
+  .js .reveal{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease}
+  .js .reveal.in{opacity:1; transform:none}
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important; transition:none!important; scroll-behavior:auto!important}
-    .reveal{opacity:1; transform:none}
+    .js .reveal{opacity:1; transform:none}
+  }
+  @media (forced-colors: active){
+    h1.name .grad,.stat .big{-webkit-text-fill-color:currentColor; color:CanvasText}
   }
 </style>
 </head>
 <body>
 
-<header class="nav">
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="nav" id="top">
   <div class="wrap nav-in">
     <a class="brand" href="#top"><span class="dot">A</span> Ata-Ul Munim</a>
     <nav class="nav-links">
       <a href="#about">About</a>
+      <a href="#services">Services</a>
       <a href="#stack">Stack</a>
       <a href="#projects">Projects</a>
       <a class="nav-cta" href="#contact">Get in touch</a>
@@ -252,8 +305,7 @@
   </div>
 </header>
 
-<a id="top"></a>
-<main class="wrap">
+<main class="wrap" id="main" tabindex="-1">
 
   <!-- HERO -->
   <section class="hero">
@@ -262,30 +314,34 @@
     <span class="kicker"><span class="pulse"></span> Available for new opportunities</span>
     <h1 class="name">Ata-Ul Munim<br><span class="grad">DevOps &amp; Cloud Engineer</span></h1>
     <div class="role">AWS &amp; Azure <span class="sep">·</span> Kubernetes <span class="sep">·</span> Terraform <span class="sep">·</span> CI/CD</div>
-    <p class="lead">I build infrastructure that <b>deploys reliably, scales automatically, and costs what it should</b>, across fintech, e-commerce, SaaS, and blockchain platforms serving 1M+ users.</p>
+    <p class="lead">I build infrastructure that <b>deploys reliably, scales automatically, and costs what it should</b>, across fintech, e-commerce, SaaS, and blockchain platforms built to serve 1M+ users.</p>
     <div class="cta-row">
       <a class="btn primary" href="https://www.upwork.com/freelancers/~01975fdc1ca94b5b58" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.6 7.3c-1.9 0-3.4 1.2-4 3.1-.9-1.4-1.6-3-2-4.4H9.3v5.3c0 1.3-1 2.4-2.3 2.4S4.6 12.6 4.6 11.3V6H2v5.3c0 2.7 2.1 4.9 4.7 4.9s4.6-2.2 4.6-4.9v-.9c.4.8.9 1.7 1.5 2.5l-1.3 6.1h2.7l.9-4.3c.8.5 1.7.8 2.8.8 2.6 0 4.7-2.2 4.7-5s-2.1-4.9-4.7-4.9zm0 7.2c-.8 0-1.6-.3-2.2-.9l.2-.9v-.1c.2-1 .9-2.1 2-2.1 1.1 0 2 .9 2 2s-.9 2-2 2z"/></svg>
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M18.6 7.3c-1.9 0-3.4 1.2-4 3.1-.9-1.4-1.6-3-2-4.4H9.3v5.3c0 1.3-1 2.4-2.3 2.4S4.6 12.6 4.6 11.3V6H2v5.3c0 2.7 2.1 4.9 4.7 4.9s4.6-2.2 4.6-4.9v-.9c.4.8.9 1.7 1.5 2.5l-1.3 6.1h2.7l.9-4.3c.8.5 1.7.8 2.8.8 2.6 0 4.7-2.2 4.7-5s-2.1-4.9-4.7-4.9zm0 7.2c-.8 0-1.6-.3-2.2-.9l.2-.9v-.1c.2-1 .9-2.1 2-2.1 1.1 0 2 .9 2 2s-.9 2-2 2z"/></svg>
         Hire me on Upwork
       </a>
-      <a class="btn ghost" href="https://github.com/aseelshaikh" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z"/></svg>
+      <a class="btn ghost email" href="mailto:monimmomin@gmail.com?subject=Project%20enquiry%20for%20Ata-Ul%20Munim&body=Hi%20Ata-Ul%2C%0A%0AWhat%20we%20need%3A%20%0ATimeline%3A%20%0ABudget%3A%20%0A">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        Email me
+      </a>
+      <a class="btn ghost" href="https://github.com/aseelshaikh" target="_blank" rel="noopener" aria-label="GitHub profile">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z"/></svg>
         GitHub
       </a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/aseelshaikh/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.3 18.3H5.6V9.7h2.7v8.6zM6.9 8.6a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2zm11.4 9.7h-2.7v-4.2c0-1-.4-1.7-1.3-1.7-.7 0-1.1.5-1.3 1-.1.2-.1.4-.1.7v4.2H10s.1-7.7 0-8.6h2.7v1.2c.4-.6 1-1.4 2.5-1.4 1.8 0 3.1 1.2 3.1 3.7v5.1z"/></svg>
+      <a class="btn ghost" href="https://www.linkedin.com/in/aseelshaikh/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.3 18.3H5.6V9.7h2.7v8.6zM6.9 8.6a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2zm11.4 9.7h-2.7v-4.2c0-1-.4-1.7-1.3-1.7-.7 0-1.1.5-1.3 1-.1.2-.1.4-.1.7v4.2H10s.1-7.7 0-8.6h2.7v1.2c.4-.6 1-1.4 2.5-1.4 1.8 0 3.1 1.2 3.1 3.7v5.1z"/></svg>
         LinkedIn
       </a>
     </div>
     <div class="hero-meta">
-      <span class="pill"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 7+ Years in Production</span>
-      <span class="pill aws"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.9 7 23l5-3 5 3-1.2-9.1"/></svg> <span class="x2">2&times;</span> AWS Certified</span>
-      <span class="pill azure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.9 7 23l5-3 5 3-1.2-9.1"/></svg> <span class="x2">2&times;</span> Azure Certified</span>
-      <span class="pill"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/></svg> Karachi, Pakistan</span>
+      <span class="pill"><svg class="ic" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 7+ Years in Production</span>
+      <span class="pill aws" title="AWS Solutions Architect Professional + Associate"><svg class="ic" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.9 7 23l5-3 5 3-1.2-9.1"/></svg> <span class="x2">2&times;</span> AWS SA Professional</span>
+      <span class="pill azure" title="Azure Infrastructure Solutions AZ-305 + Azure Administrator AZ-104"><svg class="ic" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.9 7 23l5-3 5 3-1.2-9.1"/></svg> <span class="x2">2&times;</span> Azure AZ-305 + 104</span>
+      <span class="pill"><svg class="ic" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/></svg> Karachi, Pakistan <span class="sep" style="color:var(--faint)">·</span> UTC+5</span>
     </div>
     </div>
     <div class="avatar-ring">
-      <img src="ata-ul-munim.jpg" alt="Ata-Ul Munim, DevOps and Cloud Engineer" width="340" height="340">
+      <img src="ata-ul-munim.jpg" alt="Ata-Ul Munim, DevOps and Cloud Engineer" width="340" height="340" fetchpriority="high" decoding="async">
     </div>
     </div>
   </section>
@@ -294,23 +350,51 @@
   <section id="about">
     <div class="sec-head"><h2>About</h2></div>
     <div class="stats reveal">
-      <div class="stat"><div class="big">7+</div><div class="lbl">Years of experience</div></div>
-      <div class="stat"><div class="big">1M+</div><div class="lbl">Users served</div></div>
-      <div class="stat"><div class="big">25 to 30%</div><div class="lbl">Cloud cost reduced</div></div>
+      <div class="stat"><div class="big">7+</div><div class="lbl">Years in production</div></div>
+      <div class="stat"><div class="big">1M+</div><div class="lbl">Users architected for</div></div>
+      <div class="stat"><div class="big">~30%</div><div class="lbl">Cloud cost reduced</div></div>
       <div class="stat"><div class="big">35%</div><div class="lbl">Faster deployments</div></div>
     </div>
     <div class="about-grid reveal" style="margin-top:24px">
       <div class="about-text">
         <p>I'm a DevOps &amp; Cloud Engineer with <b>over 7 years</b> designing, automating, and operating production infrastructure on <b>AWS and Azure</b>. My work spans fintech, e-commerce, SaaS, blockchain, and platform engineering, environments where reliability and cost both matter.</p>
-        <p>I cut cloud costs through rightsizing and CDN optimization, rebuild CI/CD pipelines so deployments run unattended, keep Kubernetes stable under load, and provision entire environments with a single Terraform command. I've also deployed and managed the application stacks on top (Node.js, MERN, Laravel, Django, and Android), so infrastructure decisions stay grounded in how the app actually runs.</p>
+        <p>I cut cloud costs through rightsizing and CDN optimization, rebuild CI/CD pipelines so deployments run unattended, keep Kubernetes stable under load, and provision entire environments with a single Terraform command. I've also deployed and managed the application stacks on top (Node.js, MERN, Laravel, Django, and Android), so infrastructure decisions stay grounded in how the app actually runs. My deepest work is in AWS (ECS and EKS), Terraform, and CI/CD pipeline design.</p>
         <p>Currently open to <b>full time, part time, freelance, and contract work</b>, from infrastructure audits and CI/CD overhauls to full cloud builds.</p>
       </div>
       <div class="certs">
         <h3>Certifications</h3>
-        <div class="cert"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><div class="ct">AWS Solutions Architect - Professional</div><div class="cs">Amazon Web Services</div></div></div>
-        <div class="cert"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><div class="ct">AWS Solutions Architect - Associate</div><div class="cs">Amazon Web Services</div></div></div>
-        <div class="cert"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><div class="ct">AZ-104: Azure Administrator</div><div class="cs">Microsoft Azure</div></div></div>
-        <div class="cert"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><div class="ct">AZ-305: Azure Infrastructure Solutions</div><div class="cs">Microsoft Azure</div></div></div>
+        <div class="cert"><span class="badge"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><div class="ct">AWS Solutions Architect - Professional</div><div class="cs">Amazon Web Services</div></div></div>
+        <div class="cert"><span class="badge"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><div class="ct">AWS Solutions Architect - Associate</div><div class="cs">Amazon Web Services</div></div></div>
+        <div class="cert"><span class="badge"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><div class="ct">AZ-104: Azure Administrator</div><div class="cs">Microsoft Azure</div></div></div>
+        <div class="cert"><span class="badge"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><div class="ct">AZ-305: Azure Infrastructure Solutions</div><div class="cs">Microsoft Azure</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="sec-head"><h2>How I can help</h2></div>
+    <p class="sec-sub">Focused engagements with clear deliverables, from a one-off audit to ongoing platform ownership.</p>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <h3>Cloud Cost Audit</h3>
+        <p>Rightsizing, CDN and resource cleanup, delivered as a prioritized savings report you can act on.</p>
+        <span class="tl">about 1 week</span>
+      </div>
+      <div class="svc reveal">
+        <h3>CI/CD Overhaul</h3>
+        <p>Pipelines that run unattended and release faster, with safe rollbacks and alerting that fires on the right things.</p>
+        <span class="tl">1 to 2 weeks</span>
+      </div>
+      <div class="svc reveal">
+        <h3>Kubernetes Setup &amp; Stabilization</h3>
+        <p>A production-ready EKS or AKS cluster with autoscaling, health probes, and monitoring wired in.</p>
+        <span class="tl">2 to 3 weeks</span>
+      </div>
+      <div class="svc reveal">
+        <h3>Cloud Build with Terraform</h3>
+        <p>An entire environment provisioned as reproducible, reviewable infrastructure as code.</p>
+        <span class="tl">scoped per project</span>
       </div>
     </div>
   </section>
@@ -320,25 +404,25 @@
     <div class="sec-head"><h2>Core stack</h2></div>
     <div class="stack-grid">
       <div class="stack-card reveal">
-        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19a4.5 4.5 0 1 0 0-9 6 6 0 0 0-11.6-1.6A4 4 0 0 0 6 18"/></svg> Cloud</h3>
+        <h3><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19a4.5 4.5 0 1 0 0-9 6 6 0 0 0-11.6-1.6A4 4 0 0 0 6 18"/></svg> Cloud</h3>
         <div class="chips">
           <span class="chip">AWS</span><span class="chip">ECS</span><span class="chip">EKS</span><span class="chip">Lambda</span><span class="chip">RDS</span><span class="chip">CloudFront</span><span class="chip">WAF</span><span class="chip">SES / SNS</span><span class="chip">DynamoDB</span><span class="chip">Azure</span><span class="chip">AKS</span><span class="chip">App Service</span><span class="chip">Functions</span><span class="chip">Key Vault</span><span class="chip">Front Door</span><span class="chip">App Insights</span><span class="chip">DigitalOcean</span><span class="chip">Hetzner</span>
         </div>
       </div>
       <div class="stack-card reveal">
-        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="6" rx="1"/><rect x="2" y="15" width="20" height="6" rx="1"/><path d="M6 6h.01M6 18h.01"/></svg> Containers &amp; Orchestration</h3>
+        <h3><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="6" rx="1"/><rect x="2" y="15" width="20" height="6" rx="1"/><path d="M6 6h.01M6 18h.01"/></svg> Containers &amp; Orchestration</h3>
         <div class="chips">
           <span class="chip">Kubernetes</span><span class="chip">Docker</span><span class="chip">ECS / Fargate</span><span class="chip">EKS</span><span class="chip">AKS</span><span class="chip">ECR / ACR</span><span class="chip">Helm</span>
         </div>
       </div>
       <div class="stack-card reveal">
-        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg> CI/CD &amp; IaC</h3>
+        <h3><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg> CI/CD &amp; IaC</h3>
         <div class="chips">
           <span class="chip">Terraform</span><span class="chip">GitLab CI</span><span class="chip">Azure DevOps</span><span class="chip">GitHub Actions</span><span class="chip">Jenkins</span><span class="chip">Bitbucket</span><span class="chip">Bash</span><span class="chip">Python</span>
         </div>
       </div>
       <div class="stack-card reveal">
-        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 3-4 3 3 4-6"/></svg> Observability &amp; Data</h3>
+        <h3><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 3-4 3 3 4-6"/></svg> Observability &amp; Data</h3>
         <div class="chips">
           <span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">ELK Stack</span><span class="chip">CloudWatch</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Redis</span><span class="chip">Cloudflare</span><span class="chip">Route 53</span>
         </div>
@@ -349,49 +433,49 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="sec-head"><h2>Architecture &amp; infrastructure projects</h2></div>
-    <p class="sec-sub">A selection of production systems I've designed and operated. Each links to an interactive architecture diagram showing the full request flow, async services, and CI/CD pipeline.</p>
+    <p class="sec-sub">A selection of production systems I've designed and operated. Each opens a live, interactive architecture diagram showing the full request flow, async services, and CI/CD pipeline.</p>
     <div class="proj-grid">
 
       <article class="proj reveal">
         <div class="proj-top"><h3>Matchmaking Platform</h3><span class="cloud-badge aws">AWS</span></div>
         <p>Infrastructure for a matchmaking platform architected to scale to 1M+ users. Cloudflare → CloudFront → WAF → ALB → ECS (Fargate), with Elasticsearch and RDS, async email/notifications via Lambda + SES/SNS, and identity verification through Rekognition. GitLab CI/CD with rolling dev → staging → prod deploys.</p>
         <div class="chips"><span class="chip">ECS Fargate</span><span class="chip">Elasticsearch</span><span class="chip">Lambda</span><span class="chip">SES / SNS</span><span class="chip">Rekognition</span><span class="chip">GitLab CI</span></div>
-        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/Matchmaking_Architecture_standalone.html" target="_blank" rel="noopener">View architecture diagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/Matchmaking_Architecture_standalone.html" target="_blank" rel="noopener" aria-label="Open the interactive architecture diagram for the Matchmaking Platform">Open interactive diagram <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </article>
 
       <article class="proj reveal">
         <div class="proj-top"><h3>Web3 Platform</h3><span class="cloud-badge aws">AWS</span></div>
         <p>Containerized Web3 application on ECS behind Cloudflare, CloudFront, and an ALB, backed by RDS and DynamoDB. Real-time monitoring with Prometheus + Grafana and Slack alerting; Bitbucket → ECR → ECS deployment pipeline.</p>
         <div class="chips"><span class="chip">ECS</span><span class="chip">RDS</span><span class="chip">DynamoDB</span><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">Bitbucket</span></div>
-        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/Web3-AWS_Architecture_Standalone.html" target="_blank" rel="noopener">View architecture diagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/Web3-AWS_Architecture_Standalone.html" target="_blank" rel="noopener" aria-label="Open the interactive architecture diagram for the Web3 Platform">Open interactive diagram <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </article>
 
       <article class="proj reveal">
         <div class="proj-top"><h3>Web3 Admin Portal</h3><span class="cloud-badge aws">AWS</span></div>
         <p>Admin platform on ECS running two pipelines: one Bitbucket pipeline runs Terraform plan/apply for infrastructure, and a second builds and deploys containers to ECS. Async notifications go through Lambda and SNS, with secrets centralized in SSM Parameter Store.</p>
         <div class="chips"><span class="chip">ECS</span><span class="chip">Lambda</span><span class="chip">PostgreSQL</span><span class="chip">SNS</span><span class="chip">SSM</span><span class="chip">Terraform</span></div>
-        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/Web3-admin-Architecture.html" target="_blank" rel="noopener">View architecture diagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/Web3-admin-Architecture.html" target="_blank" rel="noopener" aria-label="Open the interactive architecture diagram for the Web3 Admin Portal">Open interactive diagram <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </article>
 
       <article class="proj reveal">
         <div class="proj-top"><h3>Blockchain Wallet</h3><span class="cloud-badge azure">Azure</span></div>
         <p>Hardened, geo-routed wallet infrastructure: Traffic Manager → DDoS Protection → Front Door → WAF → AKS → Cosmos DB (MongoDB API). Secrets via Key Vault + Managed Identity over private endpoints, with App Insights + Azure Monitor and an Azure DevOps rolling-update pipeline.</p>
         <div class="chips"><span class="chip">AKS</span><span class="chip">Cosmos DB</span><span class="chip">Front Door</span><span class="chip">Key Vault</span><span class="chip">App Insights</span><span class="chip">Azure DevOps</span></div>
-        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/BC-Wallet_Azure_Architecture.html" target="_blank" rel="noopener">View architecture diagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/BC-Wallet_Azure_Architecture.html" target="_blank" rel="noopener" aria-label="Open the interactive architecture diagram for the Blockchain Wallet">Open interactive diagram <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </article>
 
       <article class="proj reveal">
         <div class="proj-top"><h3>E-Commerce Platform</h3><span class="cloud-badge azure">Azure</span></div>
         <p>E-commerce infrastructure behind Azure WAF and Application Gateway, running on Azure Web Apps and VMs with Redis caching and Azure SQL. Governance enforced through Azure Policies, ELK Stack for monitoring, and Azure DevOps pipelines with Bash-based env injection.</p>
         <div class="chips"><span class="chip">Application Gateway</span><span class="chip">WAF</span><span class="chip">Web Apps</span><span class="chip">Redis</span><span class="chip">Azure SQL</span><span class="chip">ELK Stack</span></div>
-        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/E-Commerce_Architecture_standalone.html" target="_blank" rel="noopener">View architecture diagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/E-Commerce_Architecture_standalone.html" target="_blank" rel="noopener" aria-label="Open the interactive architecture diagram for the E-Commerce Platform">Open interactive diagram <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </article>
 
       <article class="proj reveal">
         <div class="proj-top"><h3>HR Portal</h3><span class="cloud-badge azure">Azure</span></div>
         <p>Internal HR platform running on AKS with Azure SQL, provisioned end-to-end via Terraform. Azure DevOps → ACR → AKS rolling deployments, with Application Insights and the ELK Stack providing APM and log-level observability.</p>
         <div class="chips"><span class="chip">AKS</span><span class="chip">Azure SQL</span><span class="chip">ACR</span><span class="chip">Terraform</span><span class="chip">App Insights</span><span class="chip">ELK Stack</span></div>
-        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/HR-Portal_Azure_Architecture.html" target="_blank" rel="noopener">View architecture diagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="proj-link" href="https://aseelshaikh.github.io/Projects-Diagrams/HR-Portal_Azure_Architecture.html" target="_blank" rel="noopener" aria-label="Open the interactive architecture diagram for the HR Portal">Open interactive diagram <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </article>
 
     </div>
@@ -407,7 +491,7 @@
         <div class="proj-top"><h3>Starloom: Cosmic Merge</h3><span class="status live"><span class="d"></span> Live</span></div>
         <p>A cosmic merge puzzle for Android built with Jetpack Compose. I own the full release pipeline end to end: signed builds, CI auto deploy to Google Play, AdMob monetization, and hosting.</p>
         <div class="chips"><span class="chip">Android</span><span class="chip">Jetpack Compose</span><span class="chip">CI/CD</span><span class="chip">AdMob</span></div>
-        <a class="proj-link" href="https://play.google.com/store/apps/details?id=com.aseelshaikh.cosmicmerge" target="_blank" rel="noopener">View on Google Play <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="proj-link" href="https://play.google.com/store/apps/details?id=com.aseelshaikh.cosmicmerge" target="_blank" rel="noopener" aria-label="View Starloom: Cosmic Merge on Google Play">View on Google Play <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </article>
 
       <article class="proj reveal">
@@ -418,13 +502,13 @@
 
       <article class="proj reveal">
         <div class="proj-top"><h3>Confidential Project</h3><span class="status dev"><span class="d"></span> In development</span></div>
-        <p>An Android app powered by a backend of 9 independent microservices, with an API gateway, inter-service communication, and fully containerized services. I own the infrastructure end to end, from local development to a Kubernetes deployment on AWS EKS.</p>
+        <p>An Android app backed by 9 independent microservices behind an API gateway, with inter-service communication, all fully containerized. I own the infrastructure end to end, from local development to a Kubernetes deployment on AWS EKS.</p>
         <div class="chips"><span class="chip">Android</span><span class="chip">Microservices</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">AWS EKS</span></div>
       </article>
 
       <article class="proj reveal">
-        <div class="proj-top"><h3>More in the pipeline</h3><span class="status queue"><span class="d"></span> 1 in queue</span></div>
-        <p>One more app is in active development, not announced yet. Same approach: built, shipped, and operated entirely in house. Watch this space.</p>
+        <div class="proj-top"><h3>More in the pipeline</h3><span class="status queue"><span class="d"></span> In progress</span></div>
+        <p>One more app is in active development, not announced yet. Same approach: built, shipped, and operated entirely in house.</p>
         <div class="chips"><span class="chip">Coming soon</span></div>
       </article>
 
@@ -436,22 +520,22 @@
     <div class="sec-head"><h2>Open source &amp; tools</h2></div>
     <div class="os-grid">
       <div class="os reveal">
-        <div class="os-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M6.5 10v4M6.5 14h11"/></svg></div>
+        <div class="os-ico"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M6.5 10v4M6.5 14h11"/></svg></div>
         <h3>K8-WFD</h3>
         <p>Interactive AWS EKS architecture diagram built with React, TypeScript and ReactFlow, with 44 nodes and semantic zoom.</p>
-        <a class="lnk" href="https://aseelshaikh.github.io/K8-WFD/" target="_blank" rel="noopener">Live demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="lnk" href="https://aseelshaikh.github.io/K8-WFD/" target="_blank" rel="noopener" aria-label="Open the K8-WFD live demo">Live demo <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </div>
       <div class="os reveal">
-        <div class="os-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16v-5M11 16v-8M15 16v-3M19 16v-7"/></svg></div>
+        <div class="os-ico"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16v-5M11 16v-8M15 16v-3M19 16v-7"/></svg></div>
         <h3>monitoring-tool</h3>
         <p>btop-style real-time terminal system monitor for Windows (PowerShell + LHM) and Linux (Python).</p>
-        <a class="lnk" href="https://github.com/aseelshaikh/monitoring-tool" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="lnk" href="https://github.com/aseelshaikh/monitoring-tool" target="_blank" rel="noopener" aria-label="View the monitoring-tool repository on GitHub">View on GitHub <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </div>
       <div class="os reveal">
-        <div class="os-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="os-ico"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div>
         <h3>strapi-tf</h3>
         <p>Strapi CMS provisioned and deployed entirely through Terraform, with reproducible infrastructure as code.</p>
-        <a class="lnk" href="https://github.com/aseelshaikh/strapi-tf" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="lnk" href="https://github.com/aseelshaikh/strapi-tf" target="_blank" rel="noopener" aria-label="View the strapi-tf repository on GitHub">View on GitHub <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </div>
     </div>
   </section>
@@ -460,15 +544,17 @@
   <section id="contact">
     <div class="contact reveal">
       <h2>Let's build infrastructure that works when it has to</h2>
-      <p>Whether it's a cloud cost audit, a CI/CD overhaul, a Kubernetes setup, or a full build from scratch, I'm available for freelance and contract work.</p>
+      <p>Whether it's a cloud cost audit, a CI/CD overhaul, a Kubernetes setup, or a full build from scratch, send the brief and I'll tell you what I'd do first.</p>
       <div class="cta-row">
-        <a class="btn primary" href="mailto:monimmomin@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-          monimmomin@gmail.com
+        <a class="btn primary" href="mailto:monimmomin@gmail.com?subject=Project%20enquiry%20for%20Ata-Ul%20Munim&body=Hi%20Ata-Ul%2C%0A%0AWhat%20we%20need%3A%20%0ATimeline%3A%20%0ABudget%3A%20%0A">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          Email me
         </a>
         <a class="btn ghost" href="https://www.upwork.com/freelancers/~01975fdc1ca94b5b58" target="_blank" rel="noopener">Upwork profile</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/aseelshaikh/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
+      <p class="note">I read every message and usually reply within one business day. Share your stack and what you're trying to fix, and I'll tell you if and how I can help.</p>
+      <p class="copye">Prefer to copy it? <span>monimmomin@gmail.com</span></p>
     </div>
   </section>
 
@@ -486,6 +572,30 @@
   </div>
 </footer>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ata-Ul Munim",
+  "jobTitle": "DevOps & Cloud Engineer",
+  "url": "https://aseelshaikh.github.io/",
+  "image": "https://aseelshaikh.github.io/og-card.png",
+  "address": { "@type": "PostalAddress", "addressLocality": "Karachi", "addressCountry": "PK" },
+  "knowsAbout": ["AWS", "Microsoft Azure", "Kubernetes", "Terraform", "CI/CD", "Cloud Infrastructure", "DevOps", "Site Reliability Engineering"],
+  "hasCredential": [
+    {"@type": "EducationalOccupationalCredential", "name": "AWS Solutions Architect - Professional"},
+    {"@type": "EducationalOccupationalCredential", "name": "AWS Solutions Architect - Associate"},
+    {"@type": "EducationalOccupationalCredential", "name": "AZ-104: Microsoft Azure Administrator"},
+    {"@type": "EducationalOccupationalCredential", "name": "AZ-305: Designing Microsoft Azure Infrastructure Solutions"}
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/aseelshaikh/",
+    "https://github.com/aseelshaikh",
+    "https://www.upwork.com/freelancers/~01975fdc1ca94b5b58"
+  ]
+}
+</script>
+
 <script>
   // reveal on scroll
   (function(){
@@ -495,6 +605,7 @@
       entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
     },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
     els.forEach(function(e){io.observe(e)});
+    var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
   })();
 </script>
 </body>
