@@ -483,6 +483,13 @@
       <p class="sec-sub">Production systems I've designed and operated. Each opens a live, interactive architecture diagram showing the full request flow, async services, and CI/CD pipeline.</p>
       <div class="grid2">
 
+        <article class="dep reveal" style="grid-column:1/-1">
+          <div class="svc">svc/eks-platform <span class="arrow">·</span> region: aws multi-region</div>
+          <div class="dep-top"><h3>EKS Platform Migration</h3><span class="cloud-badge aws">AWS</span></div>
+          <p>Migrated containerized workloads from an on-premise Kubernetes platform onto Amazon EKS, with clusters across multiple AWS regions defined entirely in Terraform and delivered through GitHub Actions. The cluster estate is run centrally through Rancher; ingress, load balancing, certificate management, and encrypted persistent storage are delivered as code, every component runs on least-privilege IAM, and Velero with a GitOps config repo backs the disaster-recovery strategy. Wrote the guides that let application teams deploy onto the platform themselves.</p>
+          <div class="chips"><span class="chip">EKS</span><span class="chip">Terraform</span><span class="chip">GitHub Actions</span><span class="chip">Rancher</span><span class="chip">Velero</span><span class="chip">GitOps</span><span class="chip">IAM</span></div>
+        </article>
+
         <article class="dep reveal">
           <div class="svc">svc/matchmaking <span class="arrow">·</span> region: aws</div>
           <div class="dep-top"><h3>Matchmaking Platform</h3><span class="cloud-badge aws">AWS</span></div>
